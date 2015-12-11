@@ -9,6 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
+    // MARK: Properties
+    
+    //^ here we added UITextFieldDelegate to enable the ViewController class to identify as a UITextFieldDelegate
     
     @IBOutlet weak var nameTextField: UITextField!
     //The IBOutlet attribute tells Xcode that you can connect to the nameTextField property from Interface Builder
@@ -34,16 +37,81 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         //Handle the text field's user input through delegate callbacks.
         nameTextField.delegate = self
+        //Here self refers to the ViewController class, because it’s referenced inside the scope of the ViewController class definition.
     
     }
-/*
+    //MARK: UITextFieldDelegate
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
+        //Hide the keyboard/
+        
+        textField.resignFirstResponder()
+        
+        return true
     }
-*/
     
-    func textFieldDidEndEditing(textField: UITextField){
+    func textFieldDidEndEditing(textField: UITextField) {
+        
+        mealNameLabel.text = textField.text
     }
-
+    
+    //MARK: Actions
+    
+    /* UITextFieldDelegate protocal has optional methods, but to get the app to do what we want we've implemented the 2 above methods ^^
+    
+    First responder in an app is the object that first receives an app event, here, the text field is the first responder so iOS displays a keyboard for a user to begin inserting text into the field.
+    
+    When a user has finished typing the text field is no longer the first responder and the text field needs to route events to a different object 
+    
+    UITextFieldDelegate method enters here b/c that is where the the programmer specifies that the text field should quit its first responder status (when the user hits Return on the keyboard and is done typing) The method textFieldDidEndEditing is called then, when user hits Return
+    
+    */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
