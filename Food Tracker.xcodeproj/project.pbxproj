@@ -13,7 +13,7 @@
 		03A596791C124D1D00C5561C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03A596781C124D1D00C5561C /* Assets.xcassets */; };
 		03A5967C1C124D1D00C5561C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03A5967A1C124D1D00C5561C /* LaunchScreen.storyboard */; };
 		03A596871C124D1D00C5561C /* Food_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A596861C124D1D00C5561C /* Food_TrackerTests.swift */; };
-		03B8D8791C1F6D0B004D6102 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B8D8781C1F6D0B004D6102 /* RatingControl.swift */; };
+		03A9E83A1C1F8253006D0392 /* Food Tracker.app in Resources */ = {isa = PBXBuildFile; fileRef = 03A5966E1C124D1D00C5561C /* Food Tracker.app */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,6 @@
 		03A596821C124D1D00C5561C /* Food TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Food TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03A596861C124D1D00C5561C /* Food_TrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food_TrackerTests.swift; sourceTree = "<group>"; };
 		03A596881C124D1D00C5561C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		03B8D8781C1F6D0B004D6102 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RatingControl.swift; path = "/Users/ashley.jelks.truss/src/Food-Tracker-Swift-Apple-Developer-App/Food Tracker/Food Tracker/RatingControl.swift"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +60,6 @@
 		03A596651C124D1D00C5561C = {
 			isa = PBXGroup;
 			children = (
-				03B8D8781C1F6D0B004D6102 /* RatingControl.swift */,
 				03A596701C124D1D00C5561C /* Food Tracker */,
 				03A596851C124D1D00C5561C /* Food TrackerTests */,
 				03A5966F1C124D1D00C5561C /* Products */,
@@ -185,6 +183,7 @@
 				03A5967C1C124D1D00C5561C /* LaunchScreen.storyboard in Resources */,
 				03A596791C124D1D00C5561C /* Assets.xcassets in Resources */,
 				03A596771C124D1D00C5561C /* Main.storyboard in Resources */,
+				03A9E83A1C1F8253006D0392 /* Food Tracker.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +202,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				03A596741C124D1D00C5561C /* ViewController.swift in Sources */,
-				03B8D8791C1F6D0B004D6102 /* RatingControl.swift in Sources */,
 				03A596721C124D1D00C5561C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
