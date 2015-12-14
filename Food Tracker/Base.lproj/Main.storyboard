@@ -19,12 +19,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="wiF-LQ-C7l">
-                                <rect key="frame" x="20" y="68" width="560" height="437"/>
+                                <rect key="frame" x="20" y="88" width="560" height="437"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name                                                                                                 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1N-0m-LNk">
                                         <rect key="frame" x="0.0" y="0.0" width="514" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="aDd-IA-DV8"/>
+                                            <constraint firstAttribute="height" constant="21" id="nDV-zA-v3z"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -42,8 +42,9 @@
                                             <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sv4-SR-tbL"/>
                                         </connections>
                                     </button>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="JEb-65-4EX">
-                                        <rect key="frame" x="0.0" y="117" width="320" height="320"/>
+                                    <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="JEb-65-4EX">
+                                        <rect key="frame" x="0.0" y="117" width="560" height="320"/>
+                                        <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                         <gestureRecognizers/>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="v2q-aw-xhi" appends="YES" id="SCo-hZ-C0e"/>
@@ -51,14 +52,18 @@
                                     </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="JEb-65-4EX" firstAttribute="top" secondItem="Spc-FA-rc9" secondAttribute="bottom" constant="12" id="3VY-gS-6eK"/>
+                                    <constraint firstItem="XsY-QZ-Q08" firstAttribute="trailing" secondItem="JEb-65-4EX" secondAttribute="trailing" id="smd-qh-2BK"/>
                                 </constraints>
                             </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="gR6-Lo-2OF">
+                                <rect key="frame" x="20" y="533" width="560" height="47"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                         <constraints>
-                            <constraint firstItem="wiF-LQ-C7l" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="48" id="2od-ge-rzP"/>
-                            <constraint firstItem="wiF-LQ-C7l" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="VVb-yb-aV5"/>
+                            <constraint firstItem="wiF-LQ-C7l" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="54M-6u-wID"/>
+                            <constraint firstItem="wiF-LQ-C7l" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="68" id="ndS-Tx-R9i"/>
                         </constraints>
                     </view>
                     <connections>
@@ -68,11 +73,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="v2q-aw-xhi">
-                    <connections>
-                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="LC4-WQ-lcr"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer id="v2q-aw-xhi"/>
             </objects>
             <point key="canvasLocation" x="305" y="377"/>
         </scene>
