@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     // MARK: Properties
 
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var mealNameLabel: UILabel!
-    
+    @IBOutlet weak var photoImageView: UIImageView!
     
     
     
@@ -59,12 +59,76 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     */
 
+    //MARK: UIImagePickerControllerDelegate
+    
+    
+    //This method gets called when a user taps the image picker's cancel button
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        
+        //Dismiss the picker if the user cancelled.
+        dismissViewControllerAnimated(true, completion: nil)
+    
+    }
+    
+    //This method gets called when are user selects a photo--gives option to do something with the image(s) user selects from the picker. (In this case this method will take the user's selected images and display it in the UI.)
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: AnyObject]) {
+    
+        //The info dictionary contains multiple representations of the image, and this uses the original.        
+        //The info dictionary contains the original image that was selected in the picker, and the edited version of that image, if one exists. To keep things simple, you’ll use the original, unedited image for the meal photo, which is what this line of code stores into the selectedImage constant.
+        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        
+        //Set photoImageView to display the selected image
+        photoImageView .image = selectedImage
+        
+        //Dismiss the photo picker.
+        dismissViewControllerAnimated(true, completion: nil)
+        
+    
+    }
+    
     
     //MARK: Actions
+    
+    @IBAction func selectImageFromPhotoLibrary(sender: UITapGestureRecognizer) {
+        
+        //Hide the keyboard.
+        //The following line of code ensures that if the user taps the image view while typing in the text field, the keyboard is dismissed properly (because the keyboard is the First Responder.
+        nameTextField.resignFirstResponder()
+        
+        
+        
+    
+        //UIImagePickerController is a view controller that lets a user pick media from their photo library
+        let imagePickerController = UIImagePickerController()
+        
+        
+        
+        //Only allow photos to be picked, not taken.
+        //The following line of code sets the image picker controller’s source, or the place where it gets its images. The .PhotoLibrary option uses Simulator’s camera roll.
+        imagePickerController.sourceType = .PhotoLibrary
+        
+        
+        
+        //Make sure ViewController is notified when the user picks an image.
+        //An explanation of the parameters being passed to this method:
+        //1. presentViewController is a method being called on ViewController that tells ViewController to present the view controller defined by imagePickerController.
+        //2. Passing "true" to the animated parameter animates the presentation of the image picker controller.
+        //3. The Completion parameter refers to a completion handler (a piece of code that executes after this method completes. We don't need to do anything after this method completes so we pass it "nil".
+        imagePickerController.delegate = self
+        
+        presentViewController(imagePickerController, animated: true, completion: nil)
+        
+        
+        
+    }
+    
     @IBAction func setDefaultLabelText(sender: UIButton) {
         
         mealNameLabel.text = "Default Text"
     }
+    
     
 }
 
